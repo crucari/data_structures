@@ -9,4 +9,23 @@ function Set() {
     this.values = function() {
         return collection;
     };
-  
+    // this method will add an element to the set
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+    // this method will remove an element from a set
+    this.remove = function(element) {
+        if(this.has(element)){
+           var index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    };
+    // change code below this line
+    // change code above this line
+}
