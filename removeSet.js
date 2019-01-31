@@ -8,4 +8,15 @@ function Set() {
     // this method will return all the values in the set
     this.values = function() {
         return collection;
-  
+    };
+    // this method will add an element to the set
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+    // change code below this line
+    // change code above this line
+}
