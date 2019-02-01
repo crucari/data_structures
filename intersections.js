@@ -9,3 +9,11 @@ function Set() {
     this.values = function() {
         return collection;
     };
+       // this method will add an element to the set
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
