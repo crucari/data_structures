@@ -5,3 +5,7 @@ function Set() {
     this.has = function(element) {
         return (collection.indexOf(element) !== -1);
     };
+    // this method will return all the values in the set
+    this.values = function() {
+        return collection;
+    };
