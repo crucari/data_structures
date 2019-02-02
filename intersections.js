@@ -9,7 +9,7 @@ function Set() {
     this.values = function() {
         return collection;
     };
-       // this method will add an element to the set
+   // this method will add an element to the set
     this.add = function(element) {
         if(!this.has(element)){
             collection.push(element);
@@ -17,7 +17,7 @@ function Set() {
         }
         return false;
     };
-       // this method will remove an element from a set
+    // this method will remove an element from a set
     this.remove = function(element) {
         if(this.has(element)){
            var index = collection.indexOf(element);
@@ -26,3 +26,23 @@ function Set() {
         }
         return false;
     };
+    // this method will return the size of the collection
+    this.size = function() {
+        return collection.length;
+    };
+    // this method will return the union of two sets
+    this.union = function(otherSet) {
+        var unionSet = new Set();
+        var firstSet = this.values();
+        var secondSet = otherSet.values();
+        firstSet.forEach(function(e){
+            unionSet.add(e);
+        });
+        secondSet.forEach(function(e){
+            unionSet.add(e);
+        });
+        return unionSet;
+    };
+    // change code below this line
+    // change code above this line
+}
