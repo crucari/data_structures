@@ -5,7 +5,7 @@ function Set() {
     this.has = function(element) {
         return (collection.indexOf(element) !== -1);
     };
-        // this method will return all the values in the set
+    // this method will return all the values in the set
     this.values = function() {
         return collection;
     };
@@ -17,7 +17,7 @@ function Set() {
         }
         return false;
     };
-        // this method will remove an element from a set
+    // this method will remove an element from a set
     this.remove = function(element) {
         if(this.has(element)){
            var index = collection.indexOf(element);
@@ -30,3 +30,30 @@ function Set() {
     this.size = function() {
         return collection.length;
     };
+    // this method will return the union of two sets
+    this.union = function(otherSet) {
+        var unionSet = new Set();
+        var firstSet = this.values();
+        var secondSet = otherSet.values();
+        firstSet.forEach(function(e){
+            unionSet.add(e);
+        });
+        secondSet.forEach(function(e){
+            unionSet.add(e);
+        });
+        return unionSet;
+    };
+    // this method will return the intersection of two sets as a new set
+    this.intersection = function(otherSet) {
+        var intersectionSet = new Set();
+        var firstSet = this.values();
+        firstSet.forEach(function(e){
+            if(otherSet.has(e)){
+                intersectionSet.add(e);
+            }
+        });
+        return intersectionSet;
+    };
+    // change code below this line
+    // change code above this line
+}
